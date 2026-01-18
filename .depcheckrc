@@ -1,0 +1,16 @@
+{
+  "ignorePatterns": [
+    "vite.config.*",
+    "*.d.ts"
+  ],
+  "ignoreMatches": [
+    "vite",
+    "typescript",
+    "lucide-react",
+    "@vitejs/plugin-react",
+    "@types/*",
+    "eslint",
+    "eslint-*",
+    "prettier"
+  ]
+}

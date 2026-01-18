@@ -1,0 +1,224 @@
+.sidebar {
+  width: clamp(220px, 22vw, 320px);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 100vh;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  align-self: flex-start; /* ensure the sticky positioning applies */
+  height: 100vh; /* so it spans the viewport */
+  overflow-y: auto; /* optional—if sidebar itself has overflowing content */
+  box-sizing: border-box;
+
+  /* background: linear-gradient(180deg, #121318 0%, #1c1f2a 45%, #2a2f3e 75%);
+  color: #eef4ff;
+
+  background: #121318;
+  border-right: 1px solid rgba(187, 215, 255, 0.12);
+  box-shadow: inset -6px 0 12px rgba(187, 215, 255, 0.08); */
+}
+
+/* .sidebar {
+  background: linear-gradient(180deg, #121318, #1c1f2a, #121318);
+  background-size: 100% 200%;
+  animation: sidebarFlow 12s ease infinite;
+}
+
+@keyframes sidebarFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+} */
+
+/* .sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+} */
+
+.sidebar {
+  width: clamp(200px, 22vw, 320px);
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar {
+  /* Core gradient */
+  background: linear-gradient(180deg, #121318 0%, #1c1f2a 45%, #2a2f3e 75%, #1c1f2a 100%);
+
+  /* Subtle movement */
+  background-size: 100% 200%;
+  animation: sidebarFlow 14s ease-in-out infinite;
+
+  /* Edge definition & glow */
+  border-right: 1px solid rgba(187, 215, 255, 0.12);
+  box-shadow: inset -6px 0 12px rgba(187, 215, 255, 0.08);
+
+  color: #eef4ff;
+}
+
+@keyframes sidebarFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+[data-theme='light'] .sidebar {
+  /* Core gradient */
+  background: linear-gradient(180deg, #eef4ff 0%, #d9e6ff 45%, #eef4ff 100%);
+
+  /* Gentle movement */
+  background-size: 100% 200%;
+  animation: sidebarFlowLight 18s ease-in-out infinite;
+
+  /* Edge definition */
+  border-right: 1px solid rgba(18, 19, 24, 0.08);
+  box-shadow: inset -6px 0 12px rgba(187, 215, 255, 0.25);
+
+  color: #121318;
+}
+
+@keyframes sidebarFlowLight {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    animation: none;
+  }
+}
+
+.sidebar h2 {
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidebar nav a {
+  color: var(--sidebar-link);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1.07rem;
+}
+
+.sidebar nav a:hover {
+  color: var(--sidebar-link-hover);
+}
+
+.profile-picture {
+  width: 96px; /* w-24 is 96px */
+  height: 96px; /* h-24 is 96px */
+  max-width: 128px; /* matches max-w-[128px] */
+  border-radius: 9999px; /* rounded-full */
+  object-fit: cover; /* object-cover */
+  /* border: 2px solid #fff; */
+  display: block;
+  margin: auto;
+}
+
+/* Responsive: stack sidebar horizontally on small screens */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    padding: 1rem 0;
+    min-height: auto;
+    height: auto;
+  }
+  /* .sidebar h2 {
+    display: none;
+  }
+  .sidebar .profile-picture {
+    display: none;
+  } */
+  .sidebar nav {
+    display: flex; /* Added display flex */
+    flex-direction: row;
+    align-items: center; /* Added align-items */
+    justify-content: space-around; /* Added justify-content */
+    gap: 2rem;
+  }
+
+  .nav-label {
+    display: none;
+  }
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+  color: #8fb3f4;
+  flex-shrink: 0;
+}
+
+.nav-item:hover .nav-icon {
+  color: #bbd7ff;
+}
+
+.nav-item.active .nav-icon {
+  color: #121318;
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.05);
+}
+
+.nav-icon {
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profile .name {
+  margin-top: 1rem;
+}
+
+.nav-item.nav-button {
+  cursor: pointer;
+}

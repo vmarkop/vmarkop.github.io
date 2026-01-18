@@ -1,0 +1,33 @@
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.experience-company-logo {
+  height: 2em;
+  width: auto;
+}
+
+.heading-block {
+  display: flex;
+  align-items: center; /* centers icon against combined h2 + h3 */
+  gap: 0.75rem;
+}
+
+.heading-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-text h2,
+.heading-text h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Icon spans two text rows */
+.heading-icon {
+  height: 3em;
+  width: auto;
+}

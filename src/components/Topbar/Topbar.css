@@ -1,0 +1,46 @@
+.hero {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 50vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+  z-index: 1000;
+}
+
+.hero.is-hidden {
+  transform: translateY(-100%);
+}
+
+.content {
+  margin-top: 50vh;
+  padding: 2rem;
+  min-height: 200vh;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    transition: none;
+  }
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .hero {
+    position: sticky;
+    top: 0;
+    height: 40vh;
+    transform: none !important;
+  }
+
+  .content {
+    margin-top: 40vh;
+  }
+}

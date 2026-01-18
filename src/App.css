@@ -1,0 +1,30 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: var(--page-bg);
+  width: 100%;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  padding: 3rem 2rem;
+  background: var(--main-bg);
+  color: var(--main-text);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .app-wrapper {
+    flex-direction: column;
+  }
+
+  .main-content {
+    min-height: auto;
+  }
+}

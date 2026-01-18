@@ -1,0 +1,6 @@
+.magnifier-link {
+  display: inline-block;
+  position: relative;
+  overflow: visible; /* let lens peek out */
+  text-decoration: none;
+}

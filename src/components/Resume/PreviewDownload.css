@@ -1,0 +1,64 @@
+/* PreviewDownload.css */
+
+/* 1) The link itself is exactly the size of the thumbnail, but allows overflow */
+.preview-link {
+  --size: var(--pd-size);
+  --zoom: var(--pd-zoom);
+  --offset: var(--pd-offset);
+
+  display: inline-block;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  overflow: visible; /* ← allow zoom to show beyond the thumbnail */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 2) Clip only the thumbnail */
+.thumb-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.preview-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3) Position the zoomed image */
+.zoom-wrapper {
+  position: absolute;
+  top: var(--offset);
+  left: var(--offset);
+  width: var(--zoom);
+  height: var(--zoom);
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transform-origin: center center;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.preview-zoom {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 4) On hover or focus of the link, reveal the zoom */
+.preview-link:hover .zoom-wrapper,
+.preview-link:focus .zoom-wrapper {
+  opacity: 1;
+  transform: scale(1);
+}

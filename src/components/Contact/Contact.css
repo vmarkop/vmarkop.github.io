@@ -1,0 +1,5 @@
+.contact-bar {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}

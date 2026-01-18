@@ -1,0 +1,162 @@
+.weather-card-background {
+  border-radius: 10px;
+  color: white;
+  width: 720px;
+  aspect-ratio: 16 / 9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: xx-large;
+}
+
+.weather-card-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-card-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather-card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rainy {
+  background-image: url('/rain.webp');
+}
+
+.sunny {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 0%,
+    /* soft white at top */ rgba(255, 255, 255, 0.1) 40%,
+    rgba(38, 151, 241, 1) 100% /* your base blue */
+  );
+}
+
+.night {
+  background: linear-gradient(140deg, #232946 0%, #232d4d 60%, #0b1a36 100%);
+}
+
+/* .weather-card .city {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 10px;
+} */
+
+.weather-card p {
+  padding: 0 10px;
+}
+
+.citybox {
+  font-size: 48px;
+}
+
+.citybox.mobile {
+  display: none;
+}
+
+.rain {
+  height: 100%;
+  background: url('/rain.png');
+  animation: rain 0.3s linear infinite;
+}
+
+.cloudy {
+  background-image: url('/cloud.png');
+  background-repeat: repeat-x; /* Repeats both x and y */
+  background-size: 100px 100px;
+  background-position: 0 50px; /* X offset: 0, Y offset: 50px   */
+}
+
+.overcast {
+  background-image: url('/overcast.png');
+  background-repeat: repeat-x;
+  animation: overcast 20s linear infinite;
+}
+
+.small-cloudy {
+  background-image: url('/small-cloud.png');
+  background-repeat: no-repeat;
+  background-position: 0 150px; /* X offset: 0, Y offset: 50px   */
+
+  animation: cloudy 40s linear infinite;
+}
+
+@keyframes cloudy {
+  0% {
+    background-position: 20% 35%;
+  }
+  100% {
+    background-position: 100% 35%;
+  }
+}
+
+@keyframes overcast {
+  0% {
+    background-position: 20% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 20% 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-card p {
+    text-align: center;
+  }
+
+  .weather-card .weather-icon {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .weather-card {
+    width: 100%;
+    aspect-ratio: unset;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .weather-card-half {
+    display: block;
+  }
+
+  .citybox.mobile {
+    display: block;
+  }
+
+  .citybox.desktop {
+    display: none;
+  }
+
+  .weather-card-half {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .weather-card-right {
+    align-items: center;
+  }
+}

@@ -1,0 +1,62 @@
+.dip-link {
+  --bw: 210px; /* base width */
+  --bh: 297px; /* base height */
+  --zw: 420px; /* zoom width */
+  --zh: 594px; /* zoom height */
+  --ox: calc((var(--bw) - var(--zw)) / 2); /* negative offset */
+  --oy: calc((var(--bh) - var(--zh)) / 2);
+
+  display: inline-block;
+  position: relative;
+  width: var(--bw);
+  height: var(--bh);
+  overflow: visible; /* allow zoom overflow */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* base thumbnail */
+.dip-thumb {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* clip to rectangle */
+}
+.dip-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* zoomed preview */
+.dip-zoom {
+  position: absolute;
+  top: var(--oy);
+  left: var(--ox);
+  width: var(--zw);
+  height: var(--zh);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.dip-zoom img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Zoom on hover/focus for desktop devices, not when just tapping on mobile */
+@media (hover: hover) and (pointer: fine) {
+  /* hover or focus shows the zoom at full size */
+  .dip-link:hover .dip-zoom,
+  .dip-link:focus .dip-zoom {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
