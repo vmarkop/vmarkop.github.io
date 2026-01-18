@@ -16,6 +16,8 @@
   overflow-y: auto; /* optional—if sidebar itself has overflowing content */
   box-sizing: border-box;
 
+  z-index: 20;
+
   /* background: linear-gradient(180deg, #121318 0%, #1c1f2a 45%, #2a2f3e 75%);
   color: #eef4ff;
 
