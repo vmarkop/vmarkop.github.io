@@ -23,3 +23,9 @@
 1. Improve favicon
 2. Improve hover on sidebar links depending on light/dark mode.
 3. Code cleanup
+
+18/01/2026 notes
+
+1. sidebar should have z-index <10 (below magnifiers) on big screens, and z-index > 10, (on top of magnifiers) on mobile.
+
+2. npm run deploy action should automatically include CNAME file for the custom domain.
