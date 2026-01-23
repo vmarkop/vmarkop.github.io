@@ -190,6 +190,7 @@
   stroke-width: 1.75;
   color: #8fb3f4;
   flex-shrink: 0;
+  margin-right: 0.25em;
 }
 
 .nav-item:hover .nav-icon {

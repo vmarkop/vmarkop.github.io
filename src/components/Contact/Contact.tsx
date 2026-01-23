@@ -1,6 +1,7 @@
 import React from 'react';
-import { Linkedin, Mail } from 'lucide-react';
+// import { Icon, Linkedin, Mail } from 'lucide-react';
 import './Contact.css';
+import { Icon } from '@iconify/react';
 
 const Contact: React.FC = () => {
   const name = 'Vasileios';
@@ -13,10 +14,13 @@ const Contact: React.FC = () => {
       <h1>Contact me</h1>
       <div className="contact-bar">
         <a href="https://www.linkedin.com/in/vmarkop/" target="_blank" rel="noopener noreferrer">
-          <Linkedin className="w-6 h-6" />
+          <Icon icon="simple-icons:linkedin" width={24} inline={true} />
         </a>
         <a href={`mailto:${email}?body=${encodeURIComponent(body)}`}>
-          <Mail className="w-6 h-6" />
+          <Icon icon="lucide:mail" width={24} inline={true} />
+        </a>
+        <a href="https://github.com/vmarkop">
+          <Icon icon="simple-icons:github" width={24} inline={true} />
         </a>
       </div>
     </section>

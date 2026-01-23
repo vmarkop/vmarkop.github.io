@@ -14,12 +14,14 @@
     "preview": "vite preview",
     "check:deps": "depcheck --config .depcheckrc",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -c vmarkop.gr"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "@tailwindcss/vite": "^4.1.13",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "simple-icons": "^16.6.0",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
