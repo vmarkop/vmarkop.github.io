@@ -14,7 +14,7 @@
     "preview": "vite preview",
     "check:deps": "depcheck --config .depcheckrc",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -c vmarkop.gr"
+    "deploy": "gh-pages -d dist --cname vmarkop.gr"
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",
