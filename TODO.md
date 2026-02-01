@@ -29,3 +29,19 @@
 1. sidebar should have z-index <10 (below magnifiers) on big screens, and z-index > 10, (on top of magnifiers) on mobile.
 
 2. npm run deploy action should automatically include CNAME file for the custom domain.
+
+24/01/2026 notes
+
+1. Versioning system with changelog (streamlined through ci/cd)
+2. Auto versioning on deploy
+3. Footer linking to repository and to version / changelog.
+
+01/02/2026 notes
+
+1. Featured files carousel (in progress)
+2. Clicking on featured item expands it - it captures almost all screen, with download and close icons in a bottom footer (TODO)
+3. PDF and/or link versions of new file images
+4. More on version history
+5. dev/main branching
+6. (maybe) switch experience from latest to oldest
+7. Fix carousel buttons so they are visible again
