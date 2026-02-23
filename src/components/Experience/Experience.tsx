@@ -6,13 +6,38 @@ const Experience: React.FC = () => {
     <section id="experience">
       <h1>Experience</h1>
       <ExperienceSection
+        name="GUNet"
+        title="Software engineer"
+        img="GUnet_Logo_2.svg"
+        url="https://gunet.gr"
+        startDate="02-02-2021"
+      >
+        <div>
+          Full-stack Typescript Software Engineer.
+          <ul>
+            <li>
+              Contribution to the development and adoption of{' '}
+              <a href="https://wwwallet.org">wwWallet</a>, a digital Identity Wallet.
+            </li>
+            <li>
+              Research of state-of-the-art Identity and Authentication protocols, including:
+              <ul>OpenID for Verifiable Credential Issuance (OID4VCI)</ul>
+              <ul>OpenID for Verifiable Presentations (OID4VP)</ul>
+              <ul>Selective Disclosure JWT Verifiable Credentials (SDJWT-VC)</ul>
+            </li>
+            <li>
+              Research and configuration of OpenID Connect, LDAP and SAML authentication methods.
+            </li>
+          </ul>
+        </div>
+      </ExperienceSection>
+      <ExperienceSection
         name="Hellenic Army"
         title="Software engineer"
         img="ges.png"
         url="https://army.gr"
         startDate="10-03-2025"
         endDate="10-03-2026 (expected)"
-        description="Fulfilled my mandatory military service, offering my services as a Full-Stack Software Engineer"
       >
         <div>
           Fulfilled my mandatory military service, offering my services as a Full-Stack Software
@@ -53,7 +78,6 @@ const Experience: React.FC = () => {
         url="https://netcompany.com"
         startDate="01-06-2023"
         endDate="28-02-2025"
-        // description="Worked as a Consultant"
       >
         <div>
           Associate Consultant / Full-stack Developer, with responsibilities in system architecture.
