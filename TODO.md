@@ -45,3 +45,10 @@
 5. dev/main branching
 6. (maybe) switch experience from latest to oldest
 7. Fix carousel buttons so they are visible again
+
+09/05/2026 notes
+
+1. Calculate footer last updated date automatically on commit
+2. Add test to check last updated date
+3. Add github pipeline to run above test
+4. Verify iconify fetching icons?? https://api.iconify.design/

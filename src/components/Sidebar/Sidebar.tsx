@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import { Icon } from '@iconify/react';
-import { Briefcase, FileText, Mail, Moon, Sun, User } from 'lucide-react';
-import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 const Sidebar: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
