@@ -10,13 +10,28 @@ const FileCarousel: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(3);
   const [index, setIndex] = useState(0);
 
-  const files: JSX.Element[] = [
-    <img src="vasileios_markopoulos_cv_en.jpg" alt="Resume Preview" />,
-    <img src="vasileios_markopoulos_certificate_kepyes.png" alt="KEPYES Certificate" />,
-    <img src="vasileios_markopoulos_cv_gr.jpg" alt="Resume Preview (GR)" />,
-    <img src="vasileios_markopoulos_certificate_kepyes_gr.png" alt="KEPYES Certificate (GR)" />,
-    <img src="eunis.png" alt="EUNIS Submission" />,
-  ];
+  const files = [
+    {
+      src: "vasileios_markopoulos_cv_en.jpg",
+      name: "Resume Preview"
+    },
+    {
+      src: "vasileios_markopoulos_certificate_kepyes.png",
+      name: "KEPYES Certificate"
+    },
+    {
+      src: "vasileios_markopoulos_cv_gr.jpg",
+      name: "Resume Preview (GR)"
+    },
+    {
+      src: "vasileios_markopoulos_certificate_kepyes_gr.png",
+      name: "KEPYES Certificate (GR)"
+    },
+    {
+      src: "eunis.png",
+      name: "EUNIS Submission"
+    }
+  ]
 
   // Recalculate how many files fit
   useEffect(() => {
@@ -50,8 +65,14 @@ const FileCarousel: React.FC = () => {
 
         <div className="carousel-viewport" ref={containerRef}>
           <div className="carousel-track" style={{ transform: `translateX(-${translateX}px)` }}>
-            {files.map((content, i) => (
-              <File key={i}>{content}</File>
+            {files.map((file, i) => (
+              <File
+                key={i}
+                fileName={file.name}
+                downloadUrl={file.src}
+              >
+                <img src={file.src} alt={file.name} />
+              </File>
             ))}
           </div>
         </div>

@@ -1,10 +1,65 @@
 .file {
+  position: relative;
   width: 210px;
   height: 297px;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
+/* Image */
 .file img {
   max-width: 100%;
   max-height: 100%;
   display: block;
+}
+
+/* Overlay */
+.file-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.25s ease;
+}
+
+/* Show on hover (desktop) */
+.file:hover .file-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show when active (mobile click) */
+.file.active .file-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Filename */
+.file-name {
+  font-size: 12px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Download button */
+.download-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
