@@ -5,7 +5,9 @@ import './App.css';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Experience from './components/Experience/Experience';
+import FileCarousel from './components/FileCarousel/FileCarousel';
 import FindMyLocation from './components/FindMyLocation/FindMyLocation';
+import Footer from './components/Footer/Footer';
 import Location from './components/Location/Location';
 import Projects from './components/Projects/Projects';
 import Resume from './components/Resume/Resume';
@@ -22,8 +24,10 @@ function App() {
         <About />
         <Experience />
         {/* <Projects /> */}
-        <Resume />
+        {/* <Resume /> */}
+        <FileCarousel />
         <Contact />
+        <Footer />
       </div>
     </div>
   );
